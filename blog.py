@@ -1,6 +1,4 @@
 import os
-import re
-from string import letters
 from utilitites import markdown2
 
 import webapp2
