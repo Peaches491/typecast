@@ -1,0 +1,204 @@
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/* Small screens (default) */
+html { font-size: 100%; }
+ 
+/* Medium screens (640px) */
+@media (min-width: 40rem) { 
+  html { font-size: 118%; }
+}
+ 
+/* Large screens (1024px) */
+@media (min-width: 64rem) { 
+  html { font-size: 125%; }
+}
+
+
+
+body {
+	background-color: rgb(35, 31, 32);
+	font-family: 'Open Sans', sans-serif;
+/*	font-family: Arial, sans-serif;*/
+    font-size: 14px;
+
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #DDD;
+}
+
+h1, h2 {
+	font-family: 'Droid Serif', serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+}
+
+label + label {
+    margin-top: 20px;
+}
+
+input[type=text] {
+    width: 100%;
+    font-size: 1.2em;
+    padding: 2px;
+    font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospaced;
+}
+
+textarea {
+  width: 100%;
+  height: 400px;
+  font-size: 1.0em;
+  font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospaced;
+}
+
+input[type=submit] {
+  font-size: 24px;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #ddd;
+	margin: 2rem auto;
+	width: 3rem;
+}
+
+code{
+	font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospaced;
+}
+
+iframe{
+    display: block;
+	text-align: center;
+}
+
+
+
+
+
+
+
+.main-title {
+	font-family: 'Fjalla One';
+    display: block;
+    color: #EEE;
+    font-size: 4.5em;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.sub-title{
+    font-size: 2.0em;
+    
+    display: block;
+	text-align: center;
+    margin-bottom: 30px;
+}
+
+.post + .post {
+    margin-top: 15px;
+}
+
+.post-heading {
+	font-family: 'Droid Serif', serif;
+    position: relative;
+    border-bottom: 2px solid #448;
+}
+
+.post-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.post-date {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: #999;
+}
+
+.post-content {
+    font-size: 1.0rem;
+    color: #CCC;
+    margin-top: 5px;
+    padding: 0.8em;
+/* 	    column-count: 2; */
+/* 		column-gap: 1em;	 */
+/* 		-moz-column-count: 2; */
+/* 		-moz-column-gap: 1em; */
+/* 		-webkit-column-count: 2; */
+/* 		-webkit-column-gap: 1em; */
+}
+
+.preview{
+	width:100%;
+	background-color: #AAA;
+	min-height: 120px
+}
+
+
+
+
+
+.youtube {
+	margin-right: auto;
+	margin-left: auto;
+	display:block;
+}
+
+
+
+.codehilite{
+    font-size: 1.0rem;
+/*     letter-spacing: 0.015em; */
+/*     line-height: 110%; */
+    padding: 0.5em;
+    border: 1px solid #444;
+    border-radius: 4px;
+	background-color: #181818;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	
+	overflow-x: auto;
+	
+	/* white-space: pre-wrap;       css-3
+	white-space: -moz-pre-wrap;  Mozilla, since 1999
+	white-space: -pre-wrap;      Opera 4-6
+	white-space: -o-pre-wrap;    Opera 7
+	word-wrap: break-word;       Internet Explorer 5.5+ */
+}
+
+.codehilite>pre{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+
+.kn{
+	color: royalblue;
+}
+
+.s, .se{
+	color: green;
+}
+
+.o, .c{
+	color: grey;
+}
+

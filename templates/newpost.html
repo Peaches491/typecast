@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+<h1>New Post</h1>
+
+<form method="post">
+
+	<div class="error">{{error}}</div>
+
+
+	<label>
+		<div>Subject</div> 
+		<input type="text" name="subject"
+		placeholder="New post" value="{{subject}}">
+	</label> 
+	
+	<label>
+		<div>Content</div> 
+		<textarea name="content" id="newContent"
+			placeholder="Write your content here!">{{content}}</textarea>
+	</label>
+	
+
+	<label>
+		<div>Preview Post</div>
+		<div class="preview" id="preview"></div>
+	</label> 
+	
+	<br>
+	<input type="submit">
+	
+	<script src="/scripts/previewScript.js"></script>
+</form>
+{% endblock %}
