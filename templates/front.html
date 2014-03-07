@@ -3,7 +3,7 @@
 {% block content %}
 
   {% for p in posts %}
-    {{ p.render() | safe }}
+    {{ p[1].render(key=p[0]) | safe }}
     <br><br>
   {% endfor %}
 

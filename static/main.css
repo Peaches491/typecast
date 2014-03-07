@@ -202,3 +202,24 @@ iframe{
 	color: grey;
 }
 
+
+a:link {
+	text-decoration:none;
+	font-style: normal;
+	color: white;
+}
+a:visited {
+	text-decoration:none;
+	font-style: normal;
+	color: white;
+}
+a:hover {
+	text-decoration:none;
+	font-style: normal;
+	color: grey;
+}
+a:active {
+	text-decoration:none;
+	font-style: normal;
+	color: white;
+}

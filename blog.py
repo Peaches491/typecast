@@ -43,16 +43,20 @@ class Post(db.Model):
     created = db.DateTimeProperty(auto_now_add = True)
     last_modified = db.DateTimeProperty(auto_now = True)
 
-    def render(self):
+    def render(self, key=None):
 #         self._render_text = self.content.replace('\n', '<br>')
         self._render_text = markdown2.markdown(self.content, extras=["fenced-code-blocks"])
-        return render_str("post.html", p = self)
+        if key:
+            return render_str("post.html", p = self, permalink=key)
+        else:
+            return render_str("post.html", p = self)
 
 class BlogFront(BlogHandler):
     def get(self):
         posts = db.GqlQuery("select * from Post order by created desc limit 10")
-        print posts
-        self.render('front.html', posts = posts)
+        keys = db.GqlQuery("select __key__ from Post order by created desc limit 10")
+        keys = ["/blog/" + str(key.id()) for key in keys]
+        self.render('front.html', posts = zip(keys, posts))
 
 class PostPage(BlogHandler):
     def get(self, post_id):
