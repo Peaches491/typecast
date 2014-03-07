@@ -1,7 +1,7 @@
 import os
 from utilitites import markdown2
 
-import webapp2
+import webapp2, logging
 import jinja2
 
 from google.appengine.ext import db
@@ -51,17 +51,18 @@ class Post(db.Model):
 class BlogFront(BlogHandler):
     def get(self):
         posts = db.GqlQuery("select * from Post order by created desc limit 10")
+        print posts
         self.render('front.html', posts = posts)
 
 class PostPage(BlogHandler):
     def get(self, post_id):
         key = db.Key.from_path('Post', int(post_id), parent=blog_key())
         post = db.get(key)
-
+        
         if not post:
             self.error(404)
             return
-
+        
         self.render("permalink.html", post = post)
 
 class NewPost(BlogHandler):
