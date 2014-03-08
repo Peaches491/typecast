@@ -80,6 +80,8 @@ hr {
 
 code{
 	font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospaced;
+	background-color: #181818;
+//	padding: 2px 5px 2px 5px;  
 }
 
 iframe{
@@ -122,7 +124,7 @@ iframe{
 }
 
 .post-title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
@@ -152,7 +154,18 @@ iframe{
 	min-height: 120px
 }
 
-
+.footer{
+	border-top: 2px solid #448;
+	
+	font-size: 1.3em;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+    display: block;
+    
+    padding: 1em;
+    margin-bottom: 2em;
+}
 
 
 
@@ -183,6 +196,7 @@ iframe{
 	white-space: -o-pre-wrap;    Opera 7
 	word-wrap: break-word;       Internet Explorer 5.5+ */
 }
+
 
 .codehilite>pre{
 	margin-top: 0px;
