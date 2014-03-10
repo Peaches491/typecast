@@ -2,6 +2,14 @@
 <h1>New Post</h1>
 
 <form method="post">
+	
+	<script src="/scripts/pagedown/Markdown.Converter.js"></script>
+	<script src="/scripts/pagedown/Markdown.Editor.js"></script>
+	<script src="/scripts/pagedown/Markdown.Sanitizer.js"></script>
+	<script src="/scripts/pagedown-extra/Markdown.Extra.js"></script>
+	<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+	<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+
 
 	<div class="error">{{error}}</div>
 
@@ -13,20 +21,50 @@
 	</label> 
 	
 	<label>
-		<div>Content</div> 
-		<textarea name="content" id="newContent"
+	
+	<div class="wmd-panel">
+        <div id="wmd-button-bar"></div>
+		<textarea name="content" id="wmd-input" class="wmd-input"
 			placeholder="Write your content here!">{{content}}</textarea>
-	</label>
+	
+	</div>
 	
 
 	<label>
 		<div>Preview Post</div>
-		<div class="preview" id="preview"></div>
+		<div id="wmd-preview" class="wmd-panel wmd-preview"></div>
 	</label> 
 	
 	<br>
 	<input type="submit">
 	
-	<script src="/scripts/previewScript.js"></script>
+	
+	
+	
+	
+	<!-- <script src="/scripts/previewScript.js"></script>  -->
+	
+	
+	
+	<script type="text/javascript">
+	    (function () {
+	
+	        var converter1 = Markdown.getSanitizingConverter();
+	        Markdown.Extra.init(converter1, {
+	          extensions: "all",
+	          highlighter: "highlight"
+	        });
+	
+	        var editor = new Markdown.Editor(converter1);
+	        
+            editor.hooks.chain("onPreviewRefresh", hljs.initHighlightingOnLoad); // google code prettify
+               
+    		
+	        editor.run();
+	        
+	    })();
+	</script>
+	
 </form>
 {% endblock %}
+
