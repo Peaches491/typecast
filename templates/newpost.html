@@ -7,9 +7,7 @@
 	<script src="/scripts/pagedown/Markdown.Editor.js"></script>
 	<script src="/scripts/pagedown/Markdown.Sanitizer.js"></script>
 	<script src="/scripts/pagedown-extra/Markdown.Extra.js"></script>
-	<link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
-	<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-
+	<script src="/scripts/highlightjs/highlight.pack.js"></script>
 
 	<div class="error">{{error}}</div>
 
@@ -57,7 +55,13 @@
 	
 	        var editor = new Markdown.Editor(converter1);
 	        
-            editor.hooks.chain("onPreviewRefresh", hljs.initHighlightingOnLoad); // google code prettify
+            editor.hooks.chain("onPreviewRefresh", function () {
+			    var allPre, i, j;
+			    allPre = document.getElementsByTagName("pre");
+			    for (i = 0, j = allPre.length; i < j; i++) {
+			        hljs.highlightBlock(allPre[i]);
+			    }
+			});
                
     		
 	        editor.run();

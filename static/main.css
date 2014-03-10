@@ -81,7 +81,7 @@ hr {
 code{
 	font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospaced;
 	background-color: #181818;
-//	padding: 2px 5px 2px 5px;  
+	padding: 2px 5px 2px 5px;  
 }
 
 iframe{
@@ -177,17 +177,16 @@ iframe{
 
 
 
-.codehilite{
+.hljs{
     font-size: 1.0rem;
 /*     letter-spacing: 0.015em; */
 /*     line-height: 110%; */
     padding: 0.5em;
     border: 1px solid #444;
     border-radius: 4px;
-	background-color: #181818;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	
+	background-color: #181818;
 	overflow-x: auto;
 	
 	/* white-space: pre-wrap;       css-3
@@ -198,7 +197,7 @@ iframe{
 }
 
 
-.codehilite>pre{
+.hljs>pre{
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
