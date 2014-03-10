@@ -6,5 +6,8 @@
     {{ p[1].render(key=p[0]) | safe }}
     <br>
   {% endfor %}
+  
+  <script src="/scripts/highlightjs/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 
 {% endblock %}
