@@ -2,6 +2,8 @@
 <h1>New Post</h1>
 
 <form method="post">
+
+	<link type="text/css" rel="stylesheet" href="/static/editor.css" />
 	
 	<script src="/scripts/pagedown/Markdown.Converter.js"></script>
 	<script src="/scripts/pagedown/Markdown.Editor.js"></script>
@@ -20,8 +22,8 @@
 	
 	<label>
 	
-	<div class="wmd-panel">
-        <div id="wmd-button-bar"></div>
+	<div class="editor">
+        <div id="wmd-button-bar" class="wmd-button-bar"></div>
 		<textarea name="content" id="wmd-input" class="wmd-input"
 			placeholder="Write your content here!">{{content}}</textarea>
 	
