@@ -27,9 +27,8 @@ body {
 /*	font-family: Arial, sans-serif;*/
     font-size: 14px;
 
-    max-width: 760px;
+	padding: 0 0 0 0;
     margin: 0 auto;
-    padding: 10px;
     color: #DDD;
 }
 
@@ -93,12 +92,21 @@ iframe{
 
 
 
+.content {
+    max-width: 920px;
+    margin: 0 auto;
+}
 
+.title-bar{
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4581A7), color-stop(1, #234668) );
+	padding: 10px;
+}
 
 .main-title {
 	font-family: 'Fjalla One';
     display: block;
     color: #EEE;
+    
     font-size: 4.5em;
     font-weight: bold;
     text-align: center;
@@ -110,10 +118,74 @@ iframe{
     
     display: block;
 	text-align: center;
-    margin-bottom: 30px;
 }
 
-.post + .post {
+.button-row{
+	/* border-top: 2px inset #468dcf; */
+	border-spacing: 2px;
+	text-align: center;
+	padding:  0.8em 0em 0.8em 0em;
+	
+	font-size: 0px;
+}
+
+.main-button{
+	-moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #63b8ee), color-stop(1, #468dcf) );
+	background:-moz-linear-gradient( center top, #63b8ee 5%, #468dcf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#63b8ee', endColorstr='#468dcf');
+	/* background-color:#63b8ee;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px; */
+	text-indent:0;
+	border:1px solid #3866a3;
+	display:inline-block;
+	color:#14396a;
+	font-family:Arial;
+	font-size: 0.9rem;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #7cacde;
+}
+.main-button:first-child {
+	-webkit-border-bottom-left-radius:8px;
+	-moz-border-radius-bottomleft:8px;
+	border-bottom-left-radius:8px;
+}
+.main-button:last-child {
+	-webkit-border-bottom-right-radius:8px;
+	-moz-border-radius-bottomright:8px;
+	border-bottom-right-radius:8px;
+}
+
+.main-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #468dcf), color-stop(1, #63b8ee) );
+	background:-moz-linear-gradient( center top, #468dcf 5%, #63b8ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#468dcf', endColorstr='#63b8ee');
+	background-color:#468dcf;
+}
+.main-button:active {
+	position:relative;
+	top:1px;
+}
+
+
+.post {
+	margin: 0px 10px 0px 10px;
     margin-top: 15px;
 }
 
@@ -121,6 +193,7 @@ iframe{
 	font-family: 'Droid Serif', serif;
     position: relative;
     border-bottom: 2px solid #448;
+    border: 0px 10px 0px 10px;
 }
 
 .post-title {

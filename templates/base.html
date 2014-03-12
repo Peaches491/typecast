@@ -10,25 +10,33 @@
 </head>
 
 <body>
-  <a href="/blog" class="main-title">
-    { So Totally Hacking }
-  </a>
-  
-  <div class="sub-title">
-    The Trials and Tribulations of a Robotics Engineer
-  </div>
-
-  <div id="content">
-  {% block content %}
-  {% endblock %}
-  </div>
-  
-  <div class="footer">
-  Footer!
-  <br>
-  <img src="/static/drawing.png" alt="Temporary Logo">
-  
-  </div>
+	<div class="title-bar">
+	    <a href="/blog" class="main-title">
+	      { So Totally Hacking }
+	    </a>
+		<div class="sub-title">
+		  The Trials and Tribulations of a Robotics Engineer
+		</div>
+    </div>
+	
+	<div class="button-row">
+	    <button type="button" class="main-button" onClick="parent.location='blog'">Home</button>
+	    <button type="button" class="main-button">Tags</button>
+	    <button type="button" class="main-button">About</button>
+	    <button type="button" class="main-button">Contact</button>
+	</div>
+	
+	<div class="content">
+	{% block content %}
+	{% endblock %}
+	</div>
+	
+	<div class="footer">
+	Footer!
+	<br>
+	<img src="/static/drawing.png" alt="Temporary Logo">
+	
+	</div>
 </body>
 
 </html>
