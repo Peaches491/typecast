@@ -108,11 +108,11 @@ class NewPost_static(BlogHandler):
         brief = self.request.get('brief');
         url = self.request.get('url');
         content = self.request.get('content')
-
+        
         if title and content:
             p = StaticPage(parent = blog_key(), title = title, brief = brief, url=url, content = content)
             p.put()
-            self.redirect('/static/%s' % title)
+            self.redirect('/blog/%s' % url)
         else:
             error = "subject and content, please!"
             self.render("newpost.html", title=title, brief=brief, content=content, error=error)
