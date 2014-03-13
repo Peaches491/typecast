@@ -4,7 +4,8 @@ from utilitites import markdown2
 import webapp2, logging
 import jinja2
 
-from google.appengine.ext import db
+from data import *
+
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
