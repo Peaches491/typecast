@@ -50,6 +50,18 @@ class Post(db.Model):
             return render_str("post.html", p = self, permalink=key)
         else:
             return render_str("post.html", p = self)
+        
+class StaticPage(db.Model):
+    title = db.StringProperty(required = True)
+    content = db.TextProperty(required = True)
+    brief = db.TextProperty(required = True)
+    url = db.StringProperty(required = True)
+    created = db.DateTimeProperty(auto_now_add = True)
+    last_modified = db.DateTimeProperty(auto_now = True)
+
+    def render(self, key=None):
+        self._render_text = markdown2.markdown(self.content, extras=["fenced-code-blocks"])
+        return render_str("static.html", static = self)
 
 class BlogFront(BlogHandler):
     def get(self):
@@ -65,6 +77,7 @@ class PostPage(BlogHandler):
         
         if not post:
             self.error(404)
+            self.render("404.html")
             return
         
         self.render("permalink.html", post = post)
@@ -85,12 +98,46 @@ class NewPost(BlogHandler):
         else:
             error = "subject and content, please!"
             self.render("newpost.html", subject=subject, content=content, error=error)
+            
+class NewPost_static(BlogHandler):
+    def get(self):
+        self.render("newpost_static.html")
 
+    def post(self):
+        title = self.request.get('title')
+        brief = self.request.get('brief');
+        url = self.request.get('url');
+        content = self.request.get('content')
+
+        if title and content:
+            p = StaticPage(parent = blog_key(), title = title, brief = brief, url=url, content = content)
+            p.put()
+            self.redirect('/static/%s' % title)
+        else:
+            error = "subject and content, please!"
+            self.render("newpost.html", title=title, brief=brief, content=content, error=error)
+
+class Static(BlogHandler):
+    def get(self, page_title):
+        
+        pages = db.GqlQuery("select * from StaticPage where url = '%s'" % page_title)
+        page = pages.get()
+        
+        if page:
+            page.content = markdown2.markdown(page.content, extras=["fenced-code-blocks"])
+            logging.debug("Page url is: %s" % page.url)
+            self.render("permalink.html", post=page)
+        else:
+            self.error(404)
+            self.render("404.html")
 
 
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/blog/?', BlogFront),
                                ('/blog/([0-9]+)', PostPage),
                                ('/blog/newpost', NewPost),
+                               ('/blog/newpost/static', NewPost_static),
+                               ('/blog/([a-zA-Z0-9]+)', Static),
                                ],
-                              debug=True)
+                               debug=True)
+

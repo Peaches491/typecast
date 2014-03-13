@@ -1,0 +1,88 @@
+{% extends "base.html" %} {% block content %}
+<h1>New Static Pag</h1>
+
+<form method="post">
+
+	<link type="text/css" rel="stylesheet" href="/static/editor.css" />
+	
+	<script src="/scripts/pagedown/Markdown.Converter.js"></script>
+	<script src="/scripts/pagedown/Markdown.Editor.js"></script>
+	<script src="/scripts/pagedown/Markdown.Sanitizer.js"></script>
+	<script src="/scripts/pagedown-extra/Markdown.Extra.js"></script>
+	<script src="/scripts/highlightjs/highlight.pack.js"></script>
+
+	<div class="error">{{error}}</div>
+
+
+	<label>
+		<div>Title</div> 
+		<input type="text" name="title"
+		placeholder="Static page title" value="{{title}}">
+	</label> 
+	
+	<label>
+		<div>Brief Description</div> 
+		<input type="text" name="brief"
+		placeholder="Brief" value="{{brief}}">
+	</label> 
+	
+	<label>
+		<div>Unique URL</div> 
+		<input type="text" name="url"
+		placeholder="unique_url_value" value="{{url}}">
+	</label> 
+	
+	
+	
+	<div class="editor">
+        <div id="wmd-button-bar" class="wmd-button-bar"></div>
+		<textarea name="content" id="wmd-input" class="wmd-input"
+			placeholder="Write your content here!">{{content}}</textarea>
+	
+	</div>
+	
+
+	<label>
+		<div>Preview Page</div>
+		<div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+	</label> 
+	
+	<br>
+	<input type="submit">
+	
+	
+	
+	
+	
+	<!-- <script src="/scripts/previewScript.js"></script>  -->
+	
+	
+	
+	<script type="text/javascript">
+	    (function () {
+	
+	        var converter1 = Markdown.getSanitizingConverter();
+	        Markdown.Extra.init(converter1, {
+	          extensions: "all",
+	          highlighter: "highlight"
+	        });
+	
+	        var editor = new Markdown.Editor(converter1);
+	        
+            editor.hooks.chain("onPreviewRefresh", function () {
+			    var allPre, i, j;
+			    allPre = document.getElementsByTagName("pre");
+			    for (i = 0, j = allPre.length; i < j; i++) {
+			        hljs.highlightBlock(allPre[i]);
+			    }
+			});
+               
+    		
+	        editor.run();
+	        
+	    })();
+	</script>
+	
+</form>
+{% endblock %}
+
