@@ -1,15 +1,15 @@
 <div class="post">
-  <div class="post-heading">
-    <div class="post-title">
-      <a href={{permalink}}>{{p.subject}}</a>
-    </div>
+	<div class="post-heading">
+		<div class="post-title">
+			<a href={{permalink}}>{{p.subject}}</a>
+		</div>
+		<div class="tag-list">
+			<div class="tag">Tag 1</div>
+			<div class="tag">Tag 2</div>
+			<div class="tag">Tag 3</div>
+		</div>
+		<div class="post-date">{{p.created.strftime("%b %d, %Y")}}</div>
+	</div>
 
-    <div class="post-date">
-      {{p.created.strftime("%b %d, %Y")}}
-    </div>
-  </div>
-
-  <div class="post-content">
-    {{p._render_text | safe}}
-  </div>
+	<div class="post-content">{{p._render_text | safe}}</div>
 </div>
