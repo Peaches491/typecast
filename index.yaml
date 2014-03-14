@@ -21,3 +21,21 @@ indexes:
   properties:
   - name: date
     direction: desc
+
+- kind: StaticPage
+  ancestor: yes
+  properties:
+  - name: created
+    direction: desc
+
+- kind: StaticPage
+  ancestor: yes
+  properties:
+  - name: date
+    direction: desc
+
+- kind: StaticPage
+  ancestor: yes
+  properties:
+  - name: url
+    direction: desc
