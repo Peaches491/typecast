@@ -11,7 +11,10 @@ class Post(db.Model):
     def render(self, key=None):
 #         self._render_text = self.content.replace('\n', '<br>')
         self._render_text = markdown2.markdown(self.content, extras=["fenced-code-blocks"])
-        if key:
-            return Blog.render_str("post.html", p = self, permalink=key)
+        
+        tags = db.GqlQuery("select * from Tag order by title desc")
+        
+        if key and tags:
+            return Blog.render_str("post.html", p = self, permalink=key, tags=tags)
         else:
             return Blog.render_str("post.html", p = self)

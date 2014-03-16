@@ -24,7 +24,6 @@ html { font-size: 100%; }
 body {
 	background-color: rgb(35, 31, 32);
 	font-family: 'Open Sans', sans-serif;
-/*	font-family: Arial, sans-serif;*/
     font-size: 14px;
 
 	padding: 0 0 0 0;
@@ -37,6 +36,7 @@ h1, h2 {
     font-size: 1.6em;
     font-weight: normal;
     margin-bottom: 20px;
+    /* border-bottom: 2px solid #448;*/
 }
 
 .error {
@@ -169,7 +169,7 @@ iframe{
 .post-title {
     font-size: 1.5rem;
     font-weight: bold;
-    border-bottom: 2px solid #448;
+    border-bottom: 0.1em solid #14396a;
 }
 
 .post-date, .tag-list {
@@ -177,15 +177,6 @@ iframe{
     font-size: 0.8rem;
 	padding-top: 2px;
     color: #999;
-}
-
-.tag {
-	display: inline;
-}
-
-.tag + .tag {
-	margin-left: 5px;
-	display: inline;
 }
 
 .post-date {

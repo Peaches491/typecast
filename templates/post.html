@@ -4,9 +4,9 @@
 			<a href={{permalink}}>{{p.subject}}</a>
 		</div>
 		<div class="tag-list">
-			<div class="tag">Tag 1</div>
-			<div class="tag">Tag 2</div>
-			<div class="tag">Tag 3</div>
+			{% for t in tags -%}
+				{{ t.render(long=False) | safe }}
+			{%- endfor %}
 		</div>
 		<div class="post-date">{{p.created.strftime("%b %d, %Y")}}</div>
 	</div>

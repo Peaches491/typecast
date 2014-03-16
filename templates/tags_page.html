@@ -11,9 +11,9 @@
 {% block content %}
 
 	<h1>Tags:</h1>
-	<div class="tag-list">
+	<div class="tag-list-long">
 		{% for t in tags %}
-			{{ t.render() | safe }}
+			{{ t.render(long=True) | safe }}
 		{% else %}
 			<h1>There are no tags in the database!</h1>
 		{% endfor %}

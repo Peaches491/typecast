@@ -10,5 +10,8 @@ class Tag(db.Model):
     created = db.DateTimeProperty(auto_now_add = True)
     last_modified = db.DateTimeProperty(auto_now = True)
 
-    def render(self):
-        return Blog.render_str("tag.html", t = self)
+    def render(self, long=False):
+        if long:
+            return Blog.render_str("tag-long.html", t = self)
+        else:
+            return Blog.render_str("tag.html", t = self)

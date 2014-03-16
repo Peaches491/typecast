@@ -1,3 +1,5 @@
+import time
+
 from blog_handler.Blog import BlogHandler
 from blog_handler import Blog
 from google.appengine.ext import db
@@ -19,6 +21,7 @@ class TagHandler(BlogHandler):
 #             p = Post(parent = blog_key(), subject = subject, content = markdown2.markdown(content, extras=["fenced-code-blocks"]))
             p = Tag(parent = Blog.blog_key(), title = title, description = description)
             p.put()
+            time.sleep(1)
             self.redirect('/blog/tags')
         else:
             error = "Title and Description, please!"

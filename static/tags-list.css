@@ -1,4 +1,8 @@
 .tag-list {
+	display: inline;
+}
+
+.tag-list-long {
 	display: block;
 	margin: 0 auto;
 	max-width: 80%;
@@ -6,25 +10,56 @@
 }
 
 
+
+
+
+
+.tag {
+	display: inline-block;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
 .tag-long {
 	margin: 0 auto;
 	text-align: left;
 }
 
-.tag-title {
-	font-size: 1.2em;
+.tag-in-post {
+	font-size: 0.8em;
+}
+
+.tag-in-post:first-child {
+	-webkit-border-bottom-left-radius:8px;
+	-moz-border-radius-bottomleft:8px;
+	border-bottom-left-radius:8px;
+}
+.tag-in-post:last-child {
+	-webkit-border-bottom-right-radius:8px;
+	-moz-border-radius-bottomright:8px;
+	border-bottom-right-radius:8px;
+}
+
+
+
+
+
+.tag-title, .tag-title-long{
+	padding-left: 1em;
+	padding-right: 1em;
 	
-	width: 20%;
 	height: 100%;
+}
+
+.tag-title-long {
+	font-size: 1.2em;
 	
 	-webkit-border-top-right-radius:12px;
 	-moz-border-radius-topright:12px;
-	border-bottom-top-radius:12px;
+	border-bottom-top-radius: 12px;
 	-webkit-border-top-left-radius:12px;
 	-moz-border-radius-topleft:12px;
 	border-top-left-radius:12px;
-	
-	
 }
 
 .tag-description {
@@ -46,7 +81,6 @@
 	-moz-border-radius-topright:12px;
 	border-top-right-radius:12px;
 }
-
 
 .tag-long + .tag-long {
 	margin-top: 1em;
