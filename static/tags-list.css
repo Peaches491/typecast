@@ -1,15 +1,18 @@
 .tag-list {
+	display: block;
 	margin: 0 auto;
+	max-width: 80%;
+	text-align: center;
 }
 
 
 .tag-long {
-	display: block;
-	margin: 0px 1em auto;
+	margin: 0 auto;
+	text-align: left;
 }
 
 .tag-title {
-	font-size: 1.6em;
+	font-size: 1.2em;
 	
 	width: 20%;
 	height: 100%;
@@ -25,16 +28,13 @@
 }
 
 .tag-description {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	
-	width: 79%;
-	height: 100%;
 	vertical-align: middle;
-	padding: 1.2em;
+	padding: 0.8em;
 	
 	border:1px solid #444;
 	background-color: #181818;
-	
 	
 	-webkit-border-bottom-left-radius:12px;
 	-moz-border-radius-bottomleft:12px;
