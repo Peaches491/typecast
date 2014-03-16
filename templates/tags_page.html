@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block head %}
+	{{ super() }}
+	<link type="text/css" rel="stylesheet" href="/static/tags-list.css" />
+	<title>So Totally Hacking - Tags</title>
+{% endblock %}
+
+
+
+{% block content %}
+
+	<h1>Tags:</h1>
+	<div class="tag-list">
+		{% for t in tags %}
+			{{ t.render() | safe }}
+		{% else %}
+			<h1>There are no tags in the database!</h1>
+		{% endfor %}
+	</div>
+	
+	<h1>New Tag</h1>
+
+	<form method="post">
+	
+		<link type="text/css" rel="stylesheet" href="/static/editor.css" />
+		
+		<script src="/scripts/pagedown/Markdown.Converter.js"></script>
+		<script src="/scripts/pagedown/Markdown.Editor.js"></script>
+		<script src="/scripts/pagedown/Markdown.Sanitizer.js"></script>
+		<script src="/scripts/pagedown-extra/Markdown.Extra.js"></script>
+		<script src="/scripts/highlightjs/highlight.pack.js"></script>
+	
+		<div class="error">{{error}}</div>
+	
+		<label>
+			<div>Name</div> 
+			<input type="text" name="title"
+			placeholder="Tag Name" value="{{title}}">
+		</label> 
+		
+		<label>
+		
+		<div class="editor">
+	        <div id="wmd-button-bar" class="wmd-button-bar"></div>
+			<textarea name="description" id="wmd-input" class="wmd-input"
+				placeholder="Briefly describe the new tag">{{content}}</textarea>
+		</div>
+		
+	
+		<label>
+			<div>Description Preview</div>
+			<div id="wmd-preview" class="wmd-panel wmd-preview"></div>
+		</label> 
+		
+		<br>
+		<input type="submit">
+		
+		<script type="text/javascript">
+		    (function () {
+		        var converter1 = Markdown.getSanitizingConverter();
+		        Markdown.Extra.init(converter1, {
+		          extensions: "all",
+		          highlighter: "highlight"
+		        });
+		
+		        var editor = new Markdown.Editor(converter1);
+	            editor.hooks.chain("onPreviewRefresh", function () {
+				    var allPre, i, j;
+				    allPre = document.getElementsByTagName("pre");
+				    for (i = 0, j = allPre.length; i < j; i++) {
+				        hljs.highlightBlock(allPre[i]);
+				    }
+				});
+		        editor.run();
+		    })();
+		</script>
+		
+	</form>
+  
+	<script src="/scripts/highlightjs/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+{% endblock %}

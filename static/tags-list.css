@@ -1,0 +1,53 @@
+.tag-list {
+	margin: 0 auto;
+}
+
+
+.tag-long {
+	display: block;
+	margin: 0px 1em auto;
+}
+
+.tag-title {
+	font-size: 1.6em;
+	
+	width: 20%;
+	height: 100%;
+	
+	-webkit-border-top-right-radius:12px;
+	-moz-border-radius-topright:12px;
+	border-bottom-top-radius:12px;
+	-webkit-border-top-left-radius:12px;
+	-moz-border-radius-topleft:12px;
+	border-top-left-radius:12px;
+	
+	
+}
+
+.tag-description {
+	font-size: 1.4em;
+	
+	width: 79%;
+	height: 100%;
+	vertical-align: middle;
+	padding: 1.2em;
+	
+	border:1px solid #444;
+	background-color: #181818;
+	
+	
+	-webkit-border-bottom-left-radius:12px;
+	-moz-border-radius-bottomleft:12px;
+	border-bottom-left-radius:12px;
+	-webkit-border-bottom-right-radius:12px;
+	-moz-border-radius-bottomright:12px;
+	border-bottom-right-radius:12px;
+	-webkit-border-top-right-radius:12px;
+	-moz-border-radius-topright:12px;
+	border-top-right-radius:12px;
+}
+
+
+.tag-long + .tag-long {
+	margin-top: 1em;
+}
