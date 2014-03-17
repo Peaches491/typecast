@@ -9,12 +9,18 @@ class Post(db.Model):
     last_modified = db.DateTimeProperty(auto_now = True)
 
     def render(self, key=None):
-#         self._render_text = self.content.replace('\n', '<br>')
         self._render_text = markdown2.markdown(self.content, extras=["fenced-code-blocks"])
         
-        tags = db.GqlQuery("select * from Tag order by title desc")
+        query = "select tag_id from TagMap WHERE post_id = key('%s')" % self.key()
+        tags = db.GqlQuery(query).fetch(10)
+        
+        tags = [tag.tag_id for tag in tags]
         
         if key and tags:
             return Blog.render_str("post.html", p = self, permalink=key, tags=tags)
+        elif tags:
+            return Blog.render_str("post.html", p = self, tags=tags)
+        elif key:
+            return Blog.render_str("post.html", p = self, permalink=key, tags=[])
         else:
             return Blog.render_str("post.html", p = self)

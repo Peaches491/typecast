@@ -1,4 +1,3 @@
-from utilitites import markdown2
 from google.appengine.ext import db
 from blog_handler import Blog
 

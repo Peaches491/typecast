@@ -39,3 +39,8 @@ indexes:
   properties:
   - name: url
     direction: desc
+
+- kind: TagMap
+  properties:
+  - name: post_id
+  - name: tag_id
