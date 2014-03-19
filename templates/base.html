@@ -4,48 +4,78 @@
   {% block head %}
   <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono|Fjalla+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700|Roboto+Condensed' rel='stylesheet' type='text/css'>
+  <link href='http://necolas.github.io/normalize.css/3.0.0/normalize.css' rel='stylesheet' type='text/css'>
+  
+  <link rel="stylesheet" href="/static/normalize.css">
+  <link rel="stylesheet" href="/static/grid.css">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <!-- <link type="text/css" rel="stylesheet" href="/scripts/highlightjs/styles/monokai_sublime.css" /> -->
-  <link type="text/css" rel="stylesheet" href="/scripts/highlightjs/styles/monokai_sublime.css" />
-  <link type="text/css" rel="stylesheet" href="/static/buttons.css" />
+  <!-- <link type="text/css" rel="stylesheet" href="/scripts/highlightjs/styles/monokai_sublime.css" /> -->
+  <link type="text/css" rel="stylesheet" href="//buttons.css" />
   <link type="text/css" rel="stylesheet" href="/static/main.css" />
   <title>So Totally Hacking</title>
   {% endblock %}
 </head>
 
 <body>
-	<div class="title-bar">
-	    <a href="/blog" class="main-title">
-	      { So Totally Hacking }
-	    </a>
-		<div class="sub-title">
-		  The Trials and Tribulations of a Robotics Engineer
-		</div>
-    </div>
-	
-	<div class="button-row">
-		<span class="button-row">
-		    <button type="button" class="main-button" onClick="parent.location='/blog'">Home</button>
-		    <button type="button" class="main-button" onClick="parent.location='/blog/tags'">Tags</button>
-		    <button type="button" class="main-button" onClick="parent.location='/blog/about'">About</button>
-		    <button type="button" class="main-button" onClick="parent.location='/blog/contact'">Contact</button>
-		</span>
+	<div class="container center">
+		<div class="title-bar row clearfix">
+		    <div class="center row clearfix">
+			    <a href="/blog" class="main-title column">
+			      { So Totally Hacking }
+			    </a>
+		    </div>
+			<div class="sub-title row">
+			  The Trials and Tribulations of a Robotics Engineer
+			</div>
+	    </div>
 		
-		<span class="button-row">
-		    <button type="button" class="main-button" onClick="parent.location='/blog/newpost'">Post</button>
-		</span>
+		<div class="button-row row clearfix">
+			<span class="button-row">
+			    <button type="button" class="main-button" onClick="parent.location='/blog'">Home</button>
+			    <button type="button" class="main-button" onClick="parent.location='/blog/tags'">Tags</button>
+			    <button type="button" class="main-button" onClick="parent.location='/blog/about'">About</button>
+			    <button type="button" class="main-button" onClick="parent.location='/blog/contact'">Contact</button>
+			</span>
+			
+			<span class="button-row">
+			    <button type="button" class="main-button" onClick="parent.location='/blog/newpost'">Post</button>
+			</span>
+		</div>
 	</div>
 	
-	<div class="content">
-	{% block content %}
-	{% endblock %}
+	
+	 	
+	<div class="content container">
+		{% block content %}
+		{% endblock %}
 	</div>
 	
-	<div class="footer">
-	Footer!
-	<br>
-	<img src="/static/drawing.png" alt="Temporary Logo">
-	
+	<div class="title-bar">
+		<div class="container">
+			<div class="footer center">
+				<div class="row clearfix content-width">
+					<div class="column">
+						<div class="vertical-divider"></div>
+					</div>
+					
+					<div class="column half full-height">
+						<div class="link-list">
+							<div>Item 1</div>
+							<div>Item 2</div>
+							<div>Item 3</div>
+						</div>
+					</div>
+					<div class="column half">
+						<div class="logo"><img src="/static/drawing.png" alt="Temporary Logo"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	
 </body>
 
 </html>

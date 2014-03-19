@@ -28,10 +28,11 @@ body {
 
 	padding: 0 0 0 0;
     margin: 0 auto;
-    color: #DDD;
+    /*color: #DDD;*/
 }
 
 h1, h2 {
+	color: #DDD;
 	font-family: 'Droid Serif', serif;
     font-size: 1.6em;
     font-weight: normal;
@@ -44,6 +45,7 @@ h1, h2 {
 }
 
 label {
+color: #DDD;
   display: block;
   font-size: 20px;
 }
@@ -128,6 +130,7 @@ iframe{
 .sub-title{
     font-size: 1.7em;
     
+	color: #DDD;
     display: block;
 	text-align: center;
 }
@@ -145,7 +148,15 @@ iframe{
 	margin-left: 25px;
 }
 
+.form-field {
+	color: black;
+}
 
+.centered {
+	margin: 0px auto;
+	vertical-align: center;
+	text-align: center;
+}
 
 
 
@@ -161,6 +172,7 @@ iframe{
 }
 
 .post-title {
+	color: #DDD;
     font-size: 1.5rem;
     font-weight: bold;
     border-bottom: 0.1em solid #14396a;
@@ -200,17 +212,72 @@ iframe{
 }
 
 .footer{
-	border-top: 2px solid #448;
 	
+}
+
+.footer-content {
+	color: white;
+	
+	max-width: 500px;
 	font-size: 1.3em;
 	margin-right: auto;
 	margin-left: auto;
-	text-align: center;
-    display: block;
-    
+    overflow: auto;
     padding: 1em;
-    margin-bottom: 2em;
+    vertical-align: middle;
 }
+
+.footer-content > .link-list {
+	color: white;
+	vertical-align: middle;
+	display: inline-block;
+	/*padding-right: 4em;*/
+}
+
+.footer-content > .logo {
+}
+
+
+.vertical-divider {
+	color: white;
+	font-size: 0.2em;
+	width: 1px;
+	margin-right: 1em;
+	background-color: white;
+	display: inline-block;
+	
+	padding-bottom: 200px;	
+}
+
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.content-width {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 500px;
+}
+
+.column {
+    float: left;
+    margin: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+
+
+
+
+
 
 
 
@@ -220,12 +287,9 @@ iframe{
 	display:block;
 }
 
-
-
 .hljs{
     font-size: 1.0rem;
-/*     letter-spacing: 0.015em; */
-/*     line-height: 110%; */
+
     padding: 0.5em;
     border: 1px solid #444;
     border-radius: 4px;
@@ -233,12 +297,6 @@ iframe{
 	margin-bottom: 0px;
 	background-color: #181818;
 	overflow-x: auto;
-	
-	/* white-space: pre-wrap;       css-3
-	white-space: -moz-pre-wrap;  Mozilla, since 1999
-	white-space: -pre-wrap;      Opera 4-6
-	white-space: -o-pre-wrap;    Opera 7
-	word-wrap: break-word;       Internet Explorer 5.5+ */
 }
 
 
